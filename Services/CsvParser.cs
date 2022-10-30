@@ -12,9 +12,11 @@ namespace WPFDrawObjects.Services
 {
     internal class CsvParser : IParser
     {
-        private CsvConfiguration _config = new(CultureInfo.InvariantCulture)
+        private CsvConfiguration _config = new(CultureInfo.CurrentCulture)
         {
             Delimiter = ";"
+          
+            
         };
         public IEnumerable<T> Parse<T>(string path) where T : class, new()
         {

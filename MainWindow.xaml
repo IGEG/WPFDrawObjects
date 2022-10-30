@@ -35,8 +35,13 @@
         </StackPanel>
         <Canvas Grid.Column="1"
                 Grid.Row="1"
-                Background="LightBlue">
-            
+                Background="LightBlue"
+                DataContext="{Binding SelectedObject}">
+            <Rectangle Canvas.Top="{Binding Distance}"
+                       Canvas.Left="{Binding Angle}"
+                       Width="{Binding Width}"
+                       Height="{Binding Hegth}"
+                       Fill="Red"></Rectangle>
         </Canvas>
     </Grid>
 </Window>
