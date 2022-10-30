@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDrawObjects"
+        xmlns:viewModels="clr-namespace:WPFDrawObjects.ViewModels"
         mc:Ignorable="d"
-        Title="DrawDetails" Height="450" Width="800">
+        Title="DrawDetails" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel,IsDesignTimeCreatable=True}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -17,13 +19,18 @@
         </Grid.RowDefinitions>
         <DataGrid Grid.Column="0"
                   Grid.Row="0"
-                  Grid.RowSpan="2"/>
+                  Grid.RowSpan="2"
+                  ItemsSource="{Binding ObjectCollection}"
+                  SelectedItem="{Binding SelectedObject, Mode=TwoWay}"
+                  >
+        </DataGrid>
         <StackPanel Grid.Column="1"
                     Grid.Row="0"
-                    Orientation="Vertical">
+                    Orientation="Vertical"
+                    DataContext="{Binding SelectedObject}">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="*" Margin="5,5"/>
-                <TextBlock Text="*" Margin="5,5"/>
+                <TextBlock Text="Name" Margin="5,5"/>
+                <TextBlock Text="{Binding Name}" Margin="5,5"/>
             </StackPanel>
         </StackPanel>
         <Canvas Grid.Column="1"
