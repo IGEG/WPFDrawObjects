@@ -6,28 +6,46 @@
         xmlns:local="clr-namespace:WPFDrawObjects"
         xmlns:viewModels="clr-namespace:WPFDrawObjects.ViewModels"
         mc:Ignorable="d"
-        Title="DrawDetails" Height="450" Width="800"
+        Title="DrawDetails" Height="450" Width="700"
         d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel,IsDesignTimeCreatable=True}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Column="0"
-                  Grid.Row="0"
-                  Grid.RowSpan="2"
+        <StackPanel Orientation="Vertical"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.RowSpan="2">
+            <Button x:Name="OpenFile" 
+                Content="Выбрать файл" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center" 
+                FontSize="12" 
+                Margin="10,5,5,5" 
+                FontWeight="Bold" 
+                Cursor="Hand" 
+              />
+            <DataGrid 
+                Margin="10,5,10,10" 
                   ItemsSource="{Binding ObjectCollection}"
                   SelectedItem="{Binding SelectedObject, Mode=TwoWay}"
                   >
-        </DataGrid>
+            </DataGrid>
+        </StackPanel>
+      
         <StackPanel Grid.Column="1"
                     Grid.Row="0"
                     Orientation="Vertical"
                     DataContext="{Binding SelectedObject}">
+            <Label FontSize="12" 
+                Margin="10,5,5,5" 
+                FontWeight="Bold"
+                   Content="Опискание формы:"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Name" Margin="5,5"/>
                 <TextBlock Text="{Binding Name}" Margin="5,5"/>
@@ -35,6 +53,8 @@
         </StackPanel>
         <Canvas Grid.Column="1"
                 Grid.Row="1"
+                Width="200"
+                Height="120"
                 Background="LightBlue"
                 DataContext="{Binding SelectedObject}">
             <Rectangle Canvas.Top="{Binding Distance}"
