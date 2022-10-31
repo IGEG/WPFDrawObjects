@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace WPFDrawObjects.Services
 {
+    /// <summary>
+    /// Парсер файлов csv (библиотека CsvHelper)
+    /// </summary>
     internal class CsvParser : IParser
     {
         private CsvConfiguration _config = new(CultureInfo.CurrentCulture)

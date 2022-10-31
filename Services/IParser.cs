@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WPFDrawObjects.Services
 {
+    /// <summary>
+    /// Интерфейс для всех парсеров
+    /// </summary>
     public interface IParser
     {
         IEnumerable<T> Parse<T>(string path) where T : class, new();

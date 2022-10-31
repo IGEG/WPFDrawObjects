@@ -8,9 +8,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Files\objects.csv" />
+    <None Remove="Files\Objects.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
     <PackageReference Include="CsvHelper" Version="29.0.0" />
     <PackageReference Include="MiniExcel" Version="1.26.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Files\objects.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Files\Objects.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

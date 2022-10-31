@@ -21,7 +21,7 @@
                     Grid.Column="0"
                     Grid.Row="0"
                     Grid.RowSpan="2">
-            <Button x:Name="OpenFile" 
+            <Button x:Name="OpenFileButton" 
                 Content="Выбрать файл" 
                 HorizontalAlignment="Left" 
                 VerticalAlignment="Center" 
@@ -29,6 +29,7 @@
                 Margin="10,5,5,5" 
                 FontWeight="Bold" 
                 Cursor="Hand" 
+                Command="{Binding ClickCommand}"
               />
             <DataGrid 
                 Margin="10,5,10,10" 
@@ -64,7 +65,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Hegth" Margin="5,5"/>
-                <TextBlock Text="{Binding Hegth}" Margin="5,5"/>
+                <TextBlock Text="{Binding Hegth}" Margin="5"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="IsDefect" Margin="5,5"/>
@@ -72,7 +73,7 @@
             </StackPanel>
         </StackPanel>
         <Viewbox Stretch="Uniform" Grid.Column="1"
-                Grid.Row="1">
+                Grid.Row="1" Margin="5,5">
             <Canvas 
                 Width="20"
                 Height="12"

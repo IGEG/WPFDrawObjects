@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace WPFDrawObjects.Services
 {
+    /// <summary>
+    /// Парсер файлов excel (библиотека MiniExcel)
+    /// </summary>
     internal class ExcelParser : IParser
     {
         public IEnumerable<T> Parse<T>(string path) where T : class, new()
