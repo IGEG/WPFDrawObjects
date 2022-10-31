@@ -50,6 +50,26 @@
                 <TextBlock Text="Name" Margin="5,5"/>
                 <TextBlock Text="{Binding Name}" Margin="5,5"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Distance" Margin="5,5"/>
+                <TextBlock Text="{Binding Distance}" Margin="5,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Angle" Margin="5,5"/>
+                <TextBlock Text="{Binding Angle}" Margin="5,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Width" Margin="5,5"/>
+                <TextBlock Text="{Binding Width}" Margin="5,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Hegth" Margin="5,5"/>
+                <TextBlock Text="{Binding Hegth}" Margin="5,5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="IsDefect" Margin="5,5"/>
+                <TextBlock Text="{Binding IsDefect}" Margin="5,5"/>
+            </StackPanel>
         </StackPanel>
         <Viewbox Stretch="Uniform" Grid.Column="1"
                 Grid.Row="1">
