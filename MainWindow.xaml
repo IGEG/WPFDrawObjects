@@ -51,17 +51,20 @@
                 <TextBlock Text="{Binding Name}" Margin="5,5"/>
             </StackPanel>
         </StackPanel>
-        <Canvas Grid.Column="1"
-                Grid.Row="1"
-                Width="200"
-                Height="120"
+        <Viewbox Stretch="Uniform" Grid.Column="1"
+                Grid.Row="1">
+            <Canvas 
+                Width="20"
+                Height="12"
                 Background="LightBlue"
                 DataContext="{Binding SelectedObject}">
-            <Rectangle Canvas.Top="{Binding Distance}"
-                       Canvas.Left="{Binding Angle}"
+                <Rectangle Canvas.Bottom="{Binding Angle}"
+                       Canvas.Left="{Binding Distance}"
                        Width="{Binding Width}"
                        Height="{Binding Hegth}"
-                       Fill="Red"></Rectangle>
-        </Canvas>
+                       Fill="Red">
+                </Rectangle>
+            </Canvas>
+        </Viewbox>
     </Grid>
 </Window>
